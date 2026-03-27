@@ -22,13 +22,13 @@ const Bio = () => {
         <p className="text-lg text-white/80 font-light leading-relaxed">
           {lang === 'fr' ? (
             <>
-              Passionné par l'<strong>intelligence artificielle</strong> et la <strong>science des données</strong>, 
+              Passionné par l&apos;<strong>intelligence artificielle</strong> et la <strong>science des données</strong>, 
               je me définis comme un alchimiste numérique. Ma mission est de transformer les pipelines de données 
-              complexes en solutions d'IA intuitives et performantes. 
+              complexes en solutions d&apos;IA intuitives et performantes. 
               <br /><br />
               Avec une expertise particulière dans les frameworks <strong>RAG</strong> (Retrieval-Augmented Generation) 
-              et les agents autonomes, je conçois des systèmes qui ne se contentent pas de traiter l'information, 
-              mais qui l'exploitent de manière stratégique.
+              et les agents autonomes, je conçois des systèmes qui ne se contentent pas de traiter l&apos;information, 
+              mais qui l&apos;exploitent de manière stratégique.
             </>
           ) : (
             <>
@@ -37,7 +37,7 @@ const Bio = () => {
               into intuitive and high-performance AI solutions. 
               <br /><br />
               With specific expertise in <strong>RAG</strong> (Retrieval-Augmented Generation) frameworks 
-              and autonomous agents, I design systems that don't just process information, 
+              and autonomous agents, I design systems that don&apos;t just process information, 
               but leverage it strategically.
             </>
           )}

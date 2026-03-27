@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useI18n } from "@/lib/i18n-context";
-import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github, Download, Send } from "lucide-react";
 
 const Contact = () => {

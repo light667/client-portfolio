@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n-context";
 import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   const { t } = useI18n();
@@ -73,10 +74,11 @@ const Hero = () => {
         className="mt-16 w-64 h-64 relative rounded-full p-1 bg-gradient-to-br from-cyan-500 to-amethyst-500 overflow-hidden shadow-[0_0_50px_rgba(34,211,238,0.3)]"
       >
         <div className="w-full h-full rounded-full bg-indigo-950 overflow-hidden flex items-center justify-center relative">
-           <img 
+           <Image 
             src="/freeman.jpeg" 
             alt="Freeman Yao SEGUE" 
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
            />
         </div>
       </motion.div>

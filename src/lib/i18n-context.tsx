@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'fr' | 'en';
 
@@ -55,7 +55,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Language>('fr');
 
   const t = (key: string) => {
-    return (translations[lang] as any)[key] || key;
+    return (translations[lang] as Record<string, string>)[key] || key;
   };
 
   return (
