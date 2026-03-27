@@ -1,7 +1,9 @@
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/client-portfolio',
+  output: isGithubActions ? 'export' : undefined,
+  basePath: isGithubActions ? '/client-portfolio' : '',
   images: {
     unoptimized: true,
   },
