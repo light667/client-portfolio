@@ -54,17 +54,6 @@ const Navbar = () => {
           >
             <Languages size={20} className="text-cyan-400" />
           </button>
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 hover:bg-white/10 rounded-full transition-colors"
-            title="Toggle Theme"
-          >
-            {theme === "dark" ? (
-              <Sun size={20} className="text-yellow-400" />
-            ) : (
-              <Moon size={20} className="text-indigo-950" />
-            )}
-          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
