@@ -27,9 +27,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
-      <div className="w-full max-w-6xl glass rounded-2xl flex items-center justify-between px-6 py-3">
-        <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-amethyst-500 bg-clip-text text-transparent">
-          Freeman.Y
+      <div className="w-full max-w-6xl border-b border-white/10 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-sm">
+        <div className="text-xl font-black tracking-tighter text-white">
+          FREEMAN YAO SEGUE
         </div>
 
         {/* Desktop Nav */}

@@ -44,31 +44,33 @@ const Services = () => {
   const { lang, t } = useI18n();
 
   return (
-    <section id="services" className="space-y-12">
-      <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-black">{t("services.title")}</h2>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-amethyst-500 rounded-full mx-auto" />
+    <section id="services" className="space-y-16">
+      <div className="flex flex-col items-start space-y-4">
+        <h2 className="text-4xl font-black uppercase tracking-tighter">{t("services.title")}</h2>
+        <div className="h-px w-24 bg-white/20" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
         {services.map((service, idx) => (
           <motion.div
             key={service.title}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className="group p-8 glass rounded-3xl flex flex-col items-center text-center space-y-4 hover:bg-white/5 transition-all"
+            className="group p-10 bg-black/40 hover:bg-black/60 transition-all flex flex-col items-start text-left space-y-6"
           >
-            <div className={`p-4 rounded-2xl ${service.color} group-hover:scale-110 transition-transform`}>
-              {React.cloneElement(service.icon as React.ReactElement, { size: 32 })}
+            <div className="text-white/20 group-hover:text-white transition-colors">
+              {React.cloneElement(service.icon as React.ReactElement, { size: 28, strokeWidth: 1.5 })}
             </div>
-            <h3 className="text-xl font-bold">
-              {lang === 'fr' ? service.title : service.titleEn}
-            </h3>
-            <p className="text-white/60 text-sm leading-relaxed">
-              {lang === 'fr' ? service.desc : service.descEn}
-            </p>
+            <div className="space-y-2">
+              <h3 className="text-lg font-bold tracking-tight">
+                {lang === 'fr' ? service.title : service.titleEn}
+              </h3>
+              <p className="text-white/40 text-sm leading-relaxed font-medium">
+                {lang === 'fr' ? service.desc : service.descEn}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>

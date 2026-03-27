@@ -16,10 +16,10 @@ const Bio = () => {
         viewport={{ once: true }}
         className="space-y-6"
       >
-        <h2 className="text-4xl md:text-5xl font-black">{t("nav.bio")}</h2>
-        <div className="w-20 h-1.5 bg-gradient-to-r from-cyan-400 to-amethyst-500 rounded-full" />
+        <h2 className="text-4xl font-black uppercase tracking-tighter">{t("nav.bio")}</h2>
+        <div className="w-12 h-1 bg-white" />
         
-        <p className="text-lg text-white/80 font-light leading-relaxed">
+        <p className="text-base text-white/50 font-medium leading-relaxed">
           {lang === 'fr' ? (
             <>
               Passionné par l&apos;<strong>intelligence artificielle</strong> et la <strong>science des données</strong>, 
@@ -44,25 +44,25 @@ const Bio = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-px bg-white/5 border border-white/5">
         {[
-          { icon: <Brain />, title: "Generative AI", color: "text-cyan-400" },
-          { icon: <Database />, title: "RAG Systems", color: "text-amethyst-400" },
-          { icon: <Cpu />, title: "ML Engineering", color: "text-blue-400" },
-          { icon: <Globe />, title: "Data Strategy", color: "text-indigo-400" }
+          { icon: <Brain />, title: "Generative AI" },
+          { icon: <Database />, title: "RAG Systems" },
+          { icon: <Cpu />, title: "ML Engineering" },
+          { icon: <Globe />, title: "Data Strategy" }
         ].map((item, index) => (
           <motion.div
             key={item.title}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="p-6 glass rounded-2xl flex flex-col items-center text-center space-y-3 hover:border-white/30 transition-all border-glow"
+            className="p-8 bg-slate-950/40 flex flex-col items-center text-center space-y-4 hover:bg-slate-900/40 transition-colors"
           >
-            <div className={`${item.color} p-3 bg-white/5 rounded-xl`}>
-              {React.cloneElement(item.icon as React.ReactElement, { size: 32 })}
+            <div className="text-white/40 group-hover:text-white transition-colors">
+              {React.cloneElement(item.icon as React.ReactElement, { size: 24, strokeWidth: 1.5 })}
             </div>
-            <h3 className="font-bold text-sm tracking-tight">{item.title}</h3>
+            <h3 className="font-bold text-xs uppercase tracking-widest text-white/60">{item.title}</h3>
           </motion.div>
         ))}
       </div>

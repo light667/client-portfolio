@@ -44,51 +44,43 @@ const Projects = () => {
   const { lang, t } = useI18n();
 
   return (
-    <section id="projects" className="space-y-12">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-black">{t("projects.title")}</h2>
-          <p className="text-white/50 max-w-xl">
-            Sélection de travaux combinant rigueur statistique et innovation technologique.
-          </p>
-        </div>
-        <a href="#" className="text-cyan-400 font-bold flex items-center space-x-2 border-b border-cyan-400/30 hover:border-cyan-400 transition-all pb-1">
-          <span>{lang === 'fr' ? 'Voir tout sur GitHub' : 'View all on GitHub'}</span>
-          <Github size={18} />
-        </a>
+    <section id="projects" className="space-y-16">
+      <div className="flex flex-col items-start space-y-4">
+        <h2 className="text-4xl font-black uppercase tracking-tighter">{t("projects.title")}</h2>
+        <div className="h-px w-24 bg-white/20" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
         {projects.map((project, idx) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className={`group relative p-8 glass rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-white/20 transition-all`}
+            className="group relative p-10 bg-black/40 hover:bg-black/60 transition-all"
           >
-            <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-            
-            <div className="relative z-10 space-y-4">
+            <div className="relative z-10 space-y-6">
               <div className="flex items-start justify-between">
-                <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
-                  <Folder className="text-cyan-400" />
+                <div className="p-3 border border-white/10 rounded-sm">
+                  <Folder size={20} className="text-white/40 group-hover:text-white transition-colors" />
                 </div>
-                <div className="flex space-x-3">
-                  <a href={project.links.github} className="p-3 hover:bg-white/10 rounded-full transition-colors"><Github size={20} /></a>
-                  <a href={project.links.external} className="p-3 hover:bg-white/10 rounded-full transition-colors"><ExternalLink size={20} /></a>
+                <div className="flex space-x-4">
+                  <a href={project.links.github} className="text-white/30 hover:text-white transition-colors"><Github size={18} /></a>
+                  <a href={project.links.external} className="text-white/30 hover:text-white transition-colors"><ExternalLink size={18} /></a>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold group-hover:text-cyan-400 transition-colors">{project.title}</h3>
-              <p className="text-white/70 line-clamp-2">
-                {lang === 'fr' ? project.desc : project.descEn}
-              </p>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-white transition-colors">{project.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed line-clamp-2">
+                  {lang === 'fr' ? project.desc : project.descEn}
+                </p>
+              </div>
 
-              <div className="flex flex-wrap gap-2 pt-4">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {project.tech.map(t => (
-                  <span key={t} className="text-xs font-medium px-3 py-1 bg-white/5 rounded-full border border-white/10 transition-colors group-hover:border-cyan-400/30">
+                  <span key={t} className="text-[10px] font-bold tracking-wider uppercase text-white/30 border border-white/5 px-2 py-1">
                     {t}
                   </span>
                 ))}

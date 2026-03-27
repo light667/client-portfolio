@@ -9,12 +9,10 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 lg:p-24 overflow-hidden">
-      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(34,211,238,0.1),transparent_50%),radial-gradient(circle_at_20%_80%,rgba(168,85,247,0.1),transparent_50%)] pointer-events-none" />
-      
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 lg:p-24 overflow-hidden bg-background">
       <Navbar />
       
-      <div className="w-full max-w-6xl space-y-32">
+      <div className="w-full max-w-6xl space-y-48">
         <Hero />
         <Bio />
         <Skills />
@@ -23,8 +21,8 @@ export default function Home() {
         <Contact />
       </div>
 
-      <footer className="mt-20 py-8 text-center text-sm text-white/50 border-t border-white/10 w-full">
-        <p>© 2026 Freeman Yao SEGUE - Built with Next.js & Framer Motion</p>
+      <footer className="mt-40 py-12 text-center text-xs font-bold tracking-widest uppercase text-white/20 border-t border-white/5 w-full">
+        <p>© 2026 FREEMAN YAO SEGUE — BUILT WITH NEXT.JS & FRAMER MOTION</p>
       </footer>
     </main>
   );
